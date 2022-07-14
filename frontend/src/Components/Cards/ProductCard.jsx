@@ -2,13 +2,13 @@ import React from "react";
 import "../../Styles/productCard.css";
 const ProductCard = () => {
   return (
-    <div class="product-card">
-      <div class="badge">Hot</div>
-      <div class="product-tumb">
+    <div className="product-card">
+      <div className="badge">Hot</div>
+      <div className="product-tumb">
         <img src="https://i.imgur.com/xdbHo4E.png" alt="" />
       </div>
-      <div class="product-details">
-        <span class="product-catagory">Women,bag</span>
+      <div className="product-details">
+        <span className="product-catagory">Women,bag</span>
         <h4>
           <a href="">Women leather bag</a>
         </h4>
@@ -16,16 +16,16 @@ const ProductCard = () => {
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero,
           possimus nostrum!
         </p>
-        <div class="product-bottom-details">
-          <div class="product-price">
+        <div className="product-bottom-details">
+          <div className="product-price">
             <small>$96.00</small>$230.99
           </div>
-          <div class="product-links">
+          <div className="product-links">
             <a href="">
-              <i class="fa fa-heart"></i>
+              <i className="fa fa-heart"></i>
             </a>
             <a href="">
-              <i class="fa fa-shopping-cart"></i>
+              <i className="fa fa-shopping-cart"></i>
             </a>
           </div>
         </div>
