@@ -2,7 +2,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const url = process.env.REACT_APP_API_URL;
-console.log(url);
 
 // Create thunk.
 export const fetchProducts = createAsyncThunk(
@@ -35,7 +34,6 @@ const productsSlice = createSlice({
     });
     builder.addCase(fetchProducts.rejected, (state, action) => {
       state.isError = true;
-      state.errorMessage = action.error.message;
       state.errorMessage = action.error.message;
       state.loading = false;
     });
