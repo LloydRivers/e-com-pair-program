@@ -1,14 +1,8 @@
-import ProductCard from "./Components/Cards/ProductCard";
+import React from "react";
+import AllRoutes from "./Routes/AllRoutes";
 
 function App() {
-  const url = process.env.REACT_APP_API_ENPOINT;
-
-  console.log(url);
-  return (
-    <div className="App">
-      <ProductCard />
-    </div>
-  );
+  return <AllRoutes />;
 }
 
 export default App;
