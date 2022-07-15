@@ -1,7 +1,7 @@
 // Import createSlice and createAsyncThunk from '@reduxjs/toolkit'
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const url = process.env.REACT_APP_API_URL;
+const url = process.env.REACT_APP_API_ENPOINT;
 
 // Create thunk.
 export const fetchProducts = createAsyncThunk(
@@ -9,7 +9,7 @@ export const fetchProducts = createAsyncThunk(
   async () => {
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
+
     // The returned data below will become the payload of the action.
     return data;
   }
@@ -29,6 +29,7 @@ const productsSlice = createSlice({
       state.loading = true;
     });
     builder.addCase(fetchProducts.fulfilled, (state, action) => {
+      console.log("payload", action.payload);
       state.products = action.payload;
       state.loading = false;
     });
@@ -36,6 +37,7 @@ const productsSlice = createSlice({
       state.isError = true;
       state.errorMessage = action.error.message;
       state.loading = false;
+      console.log("error", action.error);
     });
   },
 });
