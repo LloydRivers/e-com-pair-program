@@ -29,7 +29,6 @@ const productsSlice = createSlice({
       state.loading = true;
     });
     builder.addCase(fetchProducts.fulfilled, (state, action) => {
-      console.log("payload", action.payload);
       state.products = action.payload;
       state.loading = false;
     });
@@ -37,7 +36,7 @@ const productsSlice = createSlice({
       state.isError = true;
       state.errorMessage = action.error.message;
       state.loading = false;
-      console.log("error", action.error);
+      console.log(action.error);
     });
   },
 });
