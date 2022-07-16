@@ -1,24 +1,20 @@
 import React from "react";
 import "../../Styles/productCard.css";
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
+  console.log(product);
   return (
     <div className="product-card">
       <div className="badge">Hot</div>
-      <div className="product-tumb">
-        <img src="https://i.imgur.com/xdbHo4E.png" alt="" />
+      <div className="imageContainer">
+        <img className="img" src={product.image} alt="" />
       </div>
       <div className="product-details">
-        <span className="product-catagory">Women,bag</span>
-        <h4>
-          <a href="">Women leather bag</a>
-        </h4>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero,
-          possimus nostrum!
-        </p>
+        <span className="product-catagory">{product.category}</span>
+        <h4 className="product-title">{product.title}</h4>
+        <p className="product-description">{product.description}</p>
         <div className="product-bottom-details">
           <div className="product-price">
-            <small>$96.00</small>$230.99
+            <small>${product.price}</small>
           </div>
           <div className="product-links">
             <a href="">
