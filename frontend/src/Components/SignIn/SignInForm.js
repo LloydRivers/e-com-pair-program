@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
-import {  signInWithGooglePopup } from '../../firebase/firebase.utils'
+import {  signInWithGooglePopup } from '../../utils/firebase/firebase.utils'
 import { SignInContainer, ButtonContainer, BaseButton, GoogleButton } from './SignIn.style'
 import FormInput from '../FormInput/FormInput'
 
@@ -17,7 +17,6 @@ const SignInForm = () => {
     // const { setCurrentUser } = useContext(UserContext)
 
 
-    console.log(signInData)
     //
     const { email, password } = signInData;
     const handleChange = (event) => {

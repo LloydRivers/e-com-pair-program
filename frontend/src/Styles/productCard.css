@@ -113,6 +113,7 @@ a {
 .product-price small {
   font-size: 80%;
   font-weight: 400;
+  text-decoration: line-through;
   display: inline-block;
   margin-right: 5px;
 }
@@ -144,7 +145,7 @@ h4:hover {
 }
 
 .product-title {
-  font-size: 18px;
+  font-size: 16px;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
