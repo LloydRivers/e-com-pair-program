@@ -6,4 +6,6 @@ import DetailsPage from "../Pages/Details_Page/DetailsPage";
 
 import CartPage from "../Pages/Cart_Page/CartPage";
 
-export { HomePage, CheckoutPage, DetailsPage, CartPage };
+import AuthenticationPage from './Authentication_Page/Authentication'
+
+export { HomePage, CheckoutPage, DetailsPage, CartPage, AuthenticationPage };

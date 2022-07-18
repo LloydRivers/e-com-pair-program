@@ -8,6 +8,7 @@ import { selectProducts } from "../../Redux/slices/ProductSlices/productsSlice";
 import { getCategory } from "../../Helpers/helpers";
 
 import Section from "../../Components/Section/Section";
+import { HomepageContainer } from "./HomePage.styled";
 
 const HomePage = () => {
   const products = useSelector(selectProducts);
@@ -18,19 +19,22 @@ const HomePage = () => {
   }, []);
   return (
     <>
-      <Section
-        data={getCategory(products, "Men's Clothing")}
-        title={"Men's Clothing"}
-      />
-      <Section data={getCategory(products, "Jewelery")} title={"Jewelery"} />
-      <Section
-        data={getCategory(products, "Electronics")}
-        title={"Electronics"}
-      />
-      <Section
-        data={getCategory(products, "Women's clothing")}
-        title={"Women's clothing"}
-      />
+    <HomepageContainer>
+        <Section
+          data={getCategory(products, "Men's Clothing")}
+          title={"Men's Clothing"}
+        />
+        <Section data={getCategory(products, "Jewelery")} title={"Jewelery"} />
+        <Section
+          data={getCategory(products, "Electronics")}
+          title={"Electronics"}
+        />
+        <Section
+          data={getCategory(products, "Women's clothing")}
+          title={"Women's clothing"}
+        />
+    </HomepageContainer>
+     
     </>
   );
 };
