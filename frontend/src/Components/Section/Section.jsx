@@ -7,7 +7,7 @@ function Section({ data, title }) {
       <h2 style={{ padding: "1rem" }}>{title}</h2>
       <div className="row">
         {data.map((product) => (
-          <div className="col-12 col-md-6 col-lg-3" key={product._id}>
+          <div className="col-12 col-md-6 col-lg-3" key={product.id}>
             <ProductCard className="line-clamp" product={product} />
           </div>
         ))}

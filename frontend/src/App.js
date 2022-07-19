@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import {  Route, Routes ,Navigate } from "react-router-dom";
 import {useSelector, useDispatch} from 'react-redux'
 import { HomePage, CheckoutPage, DetailsPage, CartPage, AuthenticationPage } from './Pages'
 import Navigation from "./Routes/Navigation/Navigation.component";
-import { auth, } from './utils/firebase/firebase.utils'
 import {signOut, onAuthStateChanged, getAuth} from 'firebase/auth'
-import {saveUser} from './Redux/slices/authSlice/authSlice'
+import {currentUser} from './Redux/slices/authSlice/authSlice'
 
 
 function App() {
@@ -17,9 +16,9 @@ function App() {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if(user){
-        dispatch(saveUser(user.refreshToken))
+        dispatch(currentUser(user.refreshToken))
       }else{
-        dispatch(saveUser(undefined))
+        dispatch(currentUser(undefined))
       }
     })
 

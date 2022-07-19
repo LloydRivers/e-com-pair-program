@@ -7,12 +7,12 @@ export const authSlice = createSlice({
     name:'user',
     initialState,
     reducers:{
-        saveUser:(state, action) => {
+        currentUser:(state, action) => {
             state.value = action.payload;
         }
 
     }
 })
 
-export const {saveUser} = authSlice.actions;
+export const {currentUser} = authSlice.actions;
 export default authSlice.reducer

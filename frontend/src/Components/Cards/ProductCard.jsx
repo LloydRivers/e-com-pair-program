@@ -1,7 +1,10 @@
 import React from "react";
 import "../../Styles/productCard.css";
+import { useDispatch, useSelect } from "react-redux";
+import { addToCart } from "../../Redux/slices/cartSlice/CartSlice";
 const ProductCard = ({ product }) => {
-  console.log(product);
+  const dispatch = useDispatch();
+  // console.log(product);
   return (
     <div className="product-card">
       <div className="badge">Hot</div>
@@ -21,7 +24,7 @@ const ProductCard = ({ product }) => {
               <i className="fa fa-heart"></i>
             </a>
             <a href="">
-              <i className="fa fa-shopping-cart"></i>
+              <i className="fa fa-shopping-cart" onClick={() => {dispatch(addToCart(product.id))}}></i>
             </a>
           </div>
         </div>
