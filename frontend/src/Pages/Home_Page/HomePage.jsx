@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { ProductCard } from "../../Components";
 import { fetchProducts } from "../../Redux/slices/ProductSlices/productsSlice";
 
 import { selectProducts } from "../../Redux/slices/ProductSlices/productsSlice";
@@ -19,7 +18,7 @@ const HomePage = () => {
   }, []);
   return (
     <>
-    <HomepageContainer>
+      <HomepageContainer>
         <Section
           data={getCategory(products, "Men's Clothing")}
           title={"Men's Clothing"}
@@ -33,8 +32,7 @@ const HomePage = () => {
           data={getCategory(products, "Women's clothing")}
           title={"Women's clothing"}
         />
-    </HomepageContainer>
-     
+      </HomepageContainer>
     </>
   );
 };
