@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import { useSelector, useDispatch } from "react-redux";
+import { addToCart } from "../../Redux/slices/CartSlices/cartSlice";
 import { addProduct } from "../../Redux/slices/ProductSlices/productSlice";
 import "../../Styles/productCard.css";
 const ProductCard = ({ product }) => {
@@ -13,6 +15,18 @@ const ProductCard = ({ product }) => {
   };
   const handleLike = () => {
     setLiked(!liked);
+  };
+
+  const sweetAlert = () => {
+    dispatch(addToCart(product));
+
+    Swal.fire({
+      title: "Added to cart",
+      text: "Product has been added to cart",
+      icon: "success",
+      showConfirmButton: false,
+      timer: 1500,
+    });
   };
   return (
     <div className="product-card">
@@ -38,7 +52,7 @@ const ProductCard = ({ product }) => {
                 className="fa fa-heart"
               ></i>
             </a>
-            <a>
+            <a onClick={sweetAlert}>
               <i className="fa fa-shopping-cart"></i>
             </a>
           </div>
