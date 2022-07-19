@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
         <p className="product-description">{product.description}</p>
         <div className="product-bottom-details">
           <div className="product-price">
-            {/* <small>${product.price}</small> */}
+            <small>${product.price}</small>
           </div>
           <div className="product-links">
             <Link
