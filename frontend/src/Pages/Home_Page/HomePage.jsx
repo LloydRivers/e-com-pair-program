@@ -18,7 +18,8 @@ const HomePage = () => {
 
   const [searchText, setSearchText] = useState("")
 const handleSearch = (e) => (setSearchText(e.target.value))
-const FilteredCategory = products?.filter((product) => (product.category.toLowerCase().includes(searchText.toLowerCase())));
+const FilteredTitle = products?.filter((product) => (product.category.toLowerCase().includes(searchText.toLowerCase())));
+
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -28,17 +29,17 @@ const FilteredCategory = products?.filter((product) => (product.category.toLower
     <Search handleChange={handleSearch}/>
     <HomepageContainer>
         <Section
-          data={getCategory(FilteredCategory, "Men's Clothing")}
-          title={"Men's Clothing"}
+          data={getCategory(FilteredTitle, "Men's Clothing")}
+          title={FilteredTitle.length > 0 ? "Men's Clothing" : null }
         />
-        <Section data={getCategory(FilteredCategory, "Jewelery")} title={"Jewelery"} />
+        <Section data={getCategory(FilteredTitle, "Jewelery")} title={FilteredTitle.length > 0 ? "Jewelery" : null} />
         <Section
-          data={getCategory(FilteredCategory, "Electronics")}
-          title={"Electronics"}
+          data={getCategory(FilteredTitle, "Electronics")}
+          title={FilteredTitle.length > 0 ? "Electronics" : null}
         />
         <Section
-          data={getCategory(FilteredCategory, "Women's clothing")}
-          title={"Women's clothing"}
+          data={getCategory(FilteredTitle, "Women's clothing")}
+          title={FilteredTitle.length > 0 ? "Women's clothing": null}
         />
     </HomepageContainer>
      
