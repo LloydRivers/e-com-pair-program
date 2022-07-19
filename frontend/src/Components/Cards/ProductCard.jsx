@@ -1,7 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { addProduct } from "../../Redux/slices/ProductSlices/productSlice";
 import "../../Styles/productCard.css";
 const ProductCard = ({ product }) => {
-  console.log(product);
+  const dispatch = useDispatch();
+
+  const addProductToDetailsPage = () => {
+    console.log("addProductToDetailsPage");
+    dispatch(addProduct(product));
+  };
+
   return (
     <div className="product-card">
       <div className="badge">Hot</div>
@@ -14,13 +23,16 @@ const ProductCard = ({ product }) => {
         <p className="product-description">{product.description}</p>
         <div className="product-bottom-details">
           <div className="product-price">
-            <small>${product.price}</small>
+            {/* <small>${product.price}</small> */}
           </div>
           <div className="product-links">
-            <a href="">
+            <Link
+              onClick={addProductToDetailsPage}
+              to={`/details/${product.id}`}
+            >
               <i className="fa fa-heart"></i>
-            </a>
-            <a href="">
+            </Link>
+            <a>
               <i className="fa fa-shopping-cart"></i>
             </a>
           </div>
