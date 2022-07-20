@@ -25,29 +25,30 @@ import {
 
 } from 'firebase/firestore'
 
-const { 
-REACT_APP_FIREBASE_API_KEY,
-REACT_APP_FIREBASE_AUTH_DOMAIN,
-REACT_APP_FIREBASE_PROJECT_ID,
-REACT_APP_FIREBASE_STORAGE_BUCKET,
-REACT_APP_FIREBASE_SENDER_ID ,
-REACT_APP_FIREBASE_APP_ID ,} = process.env
+// const { 
+// REACT_APP_FIREBASE_API_KEY,
+// REACT_APP_FIREBASE_AUTH_DOMAIN,
+// REACT_APP_FIREBASE_PROJECT_ID,
+// REACT_APP_FIREBASE_STORAGE_BUCKET,
+// REACT_APP_FIREBASE_SENDER_ID ,
+// REACT_APP_FIREBASE_APP_ID ,} = process.env
 
 const firebaseConfig = {
-    apiKey: REACT_APP_FIREBASE_API_KEY,//the mock key just enables firebase to work  as m providing an   string instead of an empty value
-    authDomain: REACT_APP_FIREBASE_AUTH_DOMAIN,
-    projectId: REACT_APP_FIREBASE_PROJECT_ID,
-    storageBucket: REACT_APP_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: REACT_APP_FIREBASE_SENDER_ID,
-    appId: REACT_APP_FIREBASE_APP_ID
+    apiKey: 'AIzaSyBXXze2f-x7StTABGFNRrpl853IPZ2nAkQ',//the mock key just enables firebase to work  as m providing an   string instead of an empty value
+    authDomain:'ecom-pair-programming.firebaseapp.com',
+    projectId:'ecom-pair-programming,',
+    storageBucket:'ecom-pair-programming.appspot.com',
+    messagingSenderId:'705240421548',
+    appId:'1:705240421548:web:3af5c04e66e0c2bd03fb09'
 }
 
-console.log(firebaseConfig.apiKey)
-console.log(firebaseConfig.authDomain)
-console.log(firebaseConfig.projectId)
-console.log(firebaseConfig.storageBucket)
-console.log(firebaseConfig.messagingSenderId)
-console.log(firebaseConfig.appId)
+
+// console.log(firebaseConfig.apiKey)
+// console.log(firebaseConfig.authDomain)
+// console.log(firebaseConfig.projectId)
+// console.log(firebaseConfig.storageBucket)
+// console.log(firebaseConfig.messagingSenderId)
+// console.log(firebaseConfig.appId)
 
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
