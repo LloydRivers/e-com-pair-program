@@ -1,12 +1,10 @@
-import React, { useState, useDispatch } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../../Redux/slices/CartSlices/cartSlice";
 import { addProduct } from "../../Redux/slices/ProductSlices/productSlice";
 import "../../Styles/productCard.css";
-import { useDispatch, useSelect } from "react-redux";
-import { addToCart } from "../../Redux/slices/cartSlice/CartSlice";
+import { useDispatch } from "react-redux";
 const ProductCard = ({ product }) => {
   const [liked, setLiked] = useState(false);
   const dispatch = useDispatch();
