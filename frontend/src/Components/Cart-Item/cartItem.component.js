@@ -1,6 +1,7 @@
 import React from 'react'
-import { CartItemContainer, CartItemDetails, CartItemName } from './cart-item.styles'
+import { CartItemContainer, CartItemDetails, CartItemName } from './cart-item.style'
 const CartItem = ({ cartItem }) => {
+    console.log(cartItem)
     const { name, quantity, imageUrl, price } = cartItem
     return (
         <CartItemContainer  >
