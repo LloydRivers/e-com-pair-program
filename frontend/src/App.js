@@ -4,21 +4,27 @@ import {useSelector, useDispatch} from 'react-redux'
 import { HomePage, CheckoutPage, DetailsPage, CartPage, AuthenticationPage } from './Pages'
 import Navigation from "./Routes/Navigation/Navigation.component";
 import { onAuthStateChanged, getAuth} from 'firebase/auth'
-import {currentUser} from './Redux/slices/authSlice/authSlice'
+import {currentUser, logIn, logOut} from './Redux/slices/authSlice/authSlice'
 
 
 function App() {
 
   const auth = getAuth();
-  const user = useSelector((state) => state.auth.value)
+  const user = useSelector(currentUser)
 
   const dispatch = useDispatch()
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if(user){
-        dispatch(currentUser(user.refreshToken))
+    onAuthStateChanged(auth, (userAuth) => {
+      if (userAuth){
+        dispatch(
+          logIn({
+            email:userAuth.email,
+            uid:userAuth.uid,
+ 
+          })
+        )
       }else{
-        dispatch(currentUser(undefined))
+        dispatch(logOut())
       }
     })
 
