@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useDispatch } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useSelector, useDispatch } from "react-redux";
@@ -12,7 +12,6 @@ const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
 
   const addProductToDetailsPage = () => {
-    console.log("addProductToDetailsPage");
     dispatch(addProduct(product));
   };
   const handleLike = () => {
